@@ -1,0 +1,206 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitintellisense"
+version = "1.0.0"
+description = "Sophisticated GitHub Repository Scanner and Automated Contribution System"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "The Augster", email = "augster@example.com"}
+]
+maintainers = [
+    {name = "The Augster", email = "augster@example.com"}
+]
+keywords = [
+    "github",
+    "repository",
+    "analysis",
+    "ai",
+    "automation",
+    "contribution",
+    "blockchain",
+    "bitcoin",
+    "code-analysis",
+    "machine-learning"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Version Control :: Git",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.68.0",
+    "PyGithub>=2.1.1",
+    "aiohttp>=3.9.0",
+    "asyncio-throttle>=1.0.2",
+    "pandas>=2.1.0",
+    "numpy>=1.24.0",
+    "python-dateutil>=2.8.2",
+    "Jinja2>=3.1.2",
+    "SQLAlchemy>=2.0.0",
+    "alembic>=1.12.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "structlog>=23.2.0",
+    "rich>=13.7.0",
+    "httpx>=0.25.0",
+    "requests>=2.31.0",
+    "ast-decompiler>=0.7.0",
+    "libcst>=1.1.0",
+    "click>=8.1.7",
+    "tqdm>=4.66.0",
+    "colorama>=0.4.6",
+    "tabulate>=0.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.12.0",
+    "black>=23.12.0",
+    "isort>=5.13.0",
+    "flake8>=6.1.0",
+    "mypy>=1.8.0",
+    "pre-commit>=3.6.0",
+]
+docs = [
+    "sphinx>=7.2.0",
+    "sphinx-rtd-theme>=2.0.0",
+]
+security = [
+    "bandit>=1.7.5",
+    "safety>=2.3.0",
+]
+performance = [
+    "py-spy>=0.3.14",
+    "memory-profiler>=0.61.0",
+]
+
+[project.scripts]
+gitintellisense = "gitintellisense.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/gitintellisense"
+Documentation = "https://gitintellisense.readthedocs.io/"
+Repository = "https://github.com/yourusername/gitintellisense"
+"Bug Tracker" = "https://github.com/yourusername/gitintellisense/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+gitintellisense = [
+    "templates/*.j2",
+    "config/*.yaml",
+    "data/*.json",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["gitintellisense"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers --strict-config"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+    "ai: marks tests that require AI API access",
+    "github: marks tests that require GitHub API access",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/test_*",
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/env/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if settings.DEBUG",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests", "venv", "env"]
+skips = ["B101", "B601"]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "venv",
+    "env",
+    "build",
+    "dist",
+    ".eggs",
+    "*.egg-info",
+]

@@ -1,0 +1,19 @@
+# Legacy and Junk
+legacy/
+logs/
+data/
+tests/
+*.log
+*.json
+dashboard.html
+.env
+.venv
+venv/
+*.db
+*.egg-info/
+src/*.egg-info/
+__pycache__/
+*.pyc
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,211 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom styles for GitIntellisense Dashboard */
+.dashboard-card {
+  background: #1f1f1f;
+  border: 1px solid #434343;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.dashboard-card .ant-card-head {
+  background: #262626;
+  border-bottom: 1px solid #434343;
+}
+
+.dashboard-card .ant-card-head-title {
+  color: #ffffff;
+}
+
+.dashboard-card .ant-card-body {
+  color: #ffffff;
+}
+
+.metric-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.metric-value {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #1890ff;
+  margin-bottom: 8px;
+}
+
+.metric-label {
+  font-size: 1.1em;
+  color: #8c8c8c;
+}
+
+.opportunity-card {
+  margin-bottom: 16px;
+  border: 1px solid #434343;
+  background: #1f1f1f;
+}
+
+.opportunity-card:hover {
+  border-color: #1890ff;
+  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.2);
+}
+
+.opportunity-score {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #52c41a;
+}
+
+.opportunity-complexity {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.complexity-low {
+  background: #52c41a;
+  color: #ffffff;
+}
+
+.complexity-medium {
+  background: #faad14;
+  color: #ffffff;
+}
+
+.complexity-high {
+  background: #ff4d4f;
+  color: #ffffff;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-active {
+  background: #52c41a;
+}
+
+.status-inactive {
+  background: #ff4d4f;
+}
+
+.status-pending {
+  background: #faad14;
+}
+
+.code-preview {
+  background: #000000;
+  border: 1px solid #434343;
+  border-radius: 4px;
+  padding: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+.analysis-progress {
+  margin: 20px 0;
+}
+
+.real-time-indicator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.real-time-dot {
+  width: 8px;
+  height: 8px;
+  background: #52c41a;
+  border-radius: 50%;
+  margin-right: 8px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.chart-container {
+  background: #1f1f1f;
+  border: 1px solid #434343;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.pr-generation-form {
+  background: #1f1f1f;
+  border: 1px solid #434343;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.generated-pr-preview {
+  background: #000000;
+  border: 1px solid #434343;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.validation-results {
+  margin-top: 16px;
+}
+
+.validation-passed {
+  color: #52c41a;
+}
+
+.validation-failed {
+  color: #ff4d4f;
+}
+
+.validation-warning {
+  color: #faad14;
+}
