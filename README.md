@@ -1,4 +1,4 @@
-# Gitintellisense (Nija Diia)
+# Gitintellisense
 
 <div align="center">
 
@@ -19,7 +19,7 @@
 
 ## 🚀 Introduction
 
-**Gitintellisense** (formerly Nija Diia) is a sophisticated, autonomous AI agent designed to revolutionize how developers interact with open-source repositories. It doesn't just scan code; it **understands** it. By leveraging advanced machine learning and natural language processing, Gitintellisense identifies real contribution opportunities, generates high-quality pull requests, and orchestrates the entire contribution lifecycle.
+**Gitintellisense** is a sophisticated, autonomous AI agent designed to revolutionize how developers interact with open-source repositories. It doesn't just scan code; it **understands** it. By leveraging advanced machine learning and natural language processing, Gitintellisense identifies real contribution opportunities, generates high-quality pull requests, and orchestrates the entire contribution lifecycle.
 
 Whether you are a maintainer looking to automate bug fixes or a contributor identifying high-impact issues, Gitintellisense serves as your intelligent pair programmer.
 
